@@ -1,0 +1,766 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InboxTales - Premium Agency Pitch Deck</title>
+    
+    <!-- Importing Plus Jakarta Sans as the closest web-safe fallback for Google Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Attempt to use Google Sans if installed locally, otherwise fallback to Plus Jakarta Sans */
+        @font-face {
+            font-family: 'Google Sans';
+            src: local('Google Sans'), local('Product Sans');
+        }
+
+        /* CORE SETUP & CSS VARIABLES - LIGHT PREMIUM THEME */
+        :root {
+            --bg-dark: #ffffff;
+            --bg-charcoal: #f5f5f7; /* Apple-like light gray */
+            --text-main: #111111; /* Stark black for high contrast */
+            --text-muted: #6e6e73; /* Premium modern gray */
+            --accent-main: #000000;
+            --accent-subtle: rgba(0, 0, 0, 0.05);
+            --font-sans: 'Google Sans', 'Plus Jakarta Sans', sans-serif;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: #e5e5ea; /* Slightly darker gray to make white slides pop */
+            display: grid;
+            gap: 40px;
+            grid-template-columns: 1fr;
+            min-height: 100vh;
+            padding: 40px 0;
+            place-items: center;
+        }
+
+        /* GLOBALLY APPLY LETTER SPACING AS REQUESTED */
+        h1, h2, h3, h4, p, li, span, div, a {
+            letter-spacing: -1px;
+        }
+
+        /* SLIDE CONTAINER */
+        .slide-container {
+            align-items: center;
+            background-color: var(--bg-dark);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            font-family: var(--font-sans);
+            height: 720px;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            width: 1280px;
+            color: var(--text-main);
+            border-radius: var(--radius-sm);
+        }
+
+        /* GLOBAL TYPOGRAPHY */
+        h1, h2, h3, h4 { font-family: var(--font-sans); font-weight: 600; }
+        
+        .slide-container p { font-size: 20px; line-height: 1.6; color: var(--text-muted); font-weight: 400; }
+        
+        /* LAYOUT COMPONENTS */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            width: 100%;
+            padding: 60px 80px;
+            z-index: 2;
+        }
+
+        .slide-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: left;
+            width: 100%;
+            color: var(--text-main);
+            letter-spacing: -1.5px;
+        }
+        
+        .slide-title span { color: var(--text-muted); }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            height: 100%;
+            align-items: center;
+        }
+
+        .image-wrapper {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: var(--bg-charcoal);
+        }
+        
+        .image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: var(--radius-md);
+            pointer-events: none;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* SPECIFIC LAYOUTS */
+        
+        /* Full Background Image Overlay - Light Theme */
+        .full-bg-image {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .full-bg-image::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(245,245,245,0.85) 100%);
+            z-index: 1;
+        }
+
+        /* 1. Title Slide */
+        .title-slide-layout {
+            text-align: center;
+            z-index: 2;
+            padding: 0 100px;
+        }
+        .title-slide-layout h1 {
+            font-size: 104px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -3px !important;
+            color: var(--text-main);
+        }
+        .title-slide-layout p {
+            font-size: 28px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 0px !important; /* Keep a bit breathable for uppercase */
+        }
+
+        /* 5. Tiled Icons (Services) */
+        .tiled-services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            width: 100%;
+            margin-top: 40px;
+        }
+        .service-tile {
+            background: var(--bg-charcoal);
+            border: 1px solid rgba(0,0,0,0.03);
+            padding: 40px 30px;
+            border-radius: var(--radius-md);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        .service-tile .icon {
+            font-size: 32px;
+            color: var(--text-main);
+            margin-bottom: 24px;
+        }
+        .service-tile h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* 6. Showcase (Two Images) */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 40px;
+            height: 100%;
+        }
+
+        /* 9. Minimal List (Why Choose Us) */
+        .minimal-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            justify-content: center;
+            height: 100%;
+        }
+        .minimal-list li {
+            font-size: 36px;
+            font-weight: 500;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+        }
+        .minimal-list li::before {
+            content: '';
+            display: inline-block;
+            width: 40px;
+            height: 3px;
+            background-color: var(--text-main);
+            margin-right: 30px;
+            border-radius: 2px;
+        }
+
+        /* Pricing Packages (Slides 10, 11, 12) */
+        .package-slide {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
+            height: 100%;
+        }
+        .package-content {
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--bg-dark); /* Pure white on packages */
+        }
+        .package-content.alt-bg {
+            background: var(--bg-charcoal);
+        }
+        .package-image-side {
+            height: 100%;
+            width: 100%;
+            background-color: #f0f0f0;
+        }
+        .package-image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .package-price {
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--text-main);
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: -2px !important;
+        }
+        .package-desc {
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--text-main);
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        .package-subtitle {
+            font-size: 14px;
+            color: var(--text-main);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 0px !important;
+        }
+        .package-features {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 20px;
+        }
+        .package-features.single-col {
+            grid-template-columns: 1fr;
+        }
+        .package-features li {
+            font-size: 16px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+        .package-features li i {
+            color: var(--text-main);
+            margin-right: 15px;
+            margin-top: 4px;
+            font-size: 14px;
+        }
+        .package-note {
+            font-size: 14px !important;
+            color: rgba(0, 0, 0, 0.4) !important;
+            margin-top: 30px;
+            font-weight: 500 !important;
+        }
+
+        /* 13. Timeline */
+        .workflow-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 60%;
+            position: relative;
+            margin-top: 40px;
+        }
+        .workflow-line {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: rgba(0,0,0,0.05);
+            z-index: 0;
+        }
+        .workflow-step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background: var(--bg-dark);
+            padding: 0 20px;
+        }
+        .step-number {
+            font-size: 64px;
+            color: var(--text-main);
+            line-height: 1;
+            margin-bottom: 16px;
+            font-weight: 700;
+            letter-spacing: -2px !important;
+        }
+        .workflow-step h3 { font-size: 20px; text-transform: uppercase; font-weight: 600;}
+
+        /* 15. Contact */
+        .contact-layout {
+            text-align: center;
+            z-index: 2;
+            width: 100%;
+        }
+        .contact-layout h2 {
+            font-size: 72px;
+            margin-bottom: 60px;
+            font-weight: 700;
+            letter-spacing: -2px !important;
+            color: var(--text-main);
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+        .contact-item {
+            font-size: 24px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: 500;
+        }
+        .contact-item i { color: var(--text-main); }
+
+        /* Subtle grid background for structural feel */
+        .grid-bg::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+<style>
+  .lms-source-label {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #e0e0e0;
+    color: #333333;
+    border-radius: 10px;
+    padding: 4px 4px;
+    font-family: sans-serif;
+    font-size: 10px;
+    pointer-events: none;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+</style><style>
+  :where(.slide-attributions) {
+    padding: 60px;
+  }
+  .attribution-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .attribution-list__item {
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 90px 1fr;
+    padding: 15px 0;
+    margin: 0 !important;
+  }
+  .attribution-list__item::before {
+    display: none;
+  }
+  .attribution-list__item::after {
+    display: none;
+  }
+  .attribution-list__item:last-child {
+    border-bottom: none;
+  }
+  .attribution-list__item .attribution__thumbnail {
+    height: 50px;
+    width: 90px;
+  }
+  .attribution__thumbnail .attribution__thumbnail__image {
+    border-radius: 8px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+  .attribution__details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .attribution__details .attribution__raw-url {
+    color: inherit;
+    font-size: 13px;
+    margin: 0;
+    word-break: break-all;
+  }
+  .attribution__details .attribution__title {
+    color: inherit;
+    font-size: 16px;
+    margin: 0;
+  }
+  .attribution__details .attribution__title > .attribution__link {
+    color: #4f46e5;
+    text-decoration: none;
+  }
+</style></head>
+<body>
+
+    <!-- Slide 1: Powerful opening slide -->
+    <div class="slide-container full-bg-image" id="slide1" style="background-image: url(&#39;https://placehold.co/600x400/png&#39;);">
+        <div class="title-slide-layout">
+            <h1>InboxTales</h1>
+            <p>Building Modern Digital Experiences</p>
+        </div>
+    </div>
+
+    <!-- Slide 2: The modern digital world -->
+    <div class="slide-container full-bg-image" id="slide2" style="background-image: url(&#39;https://placehold.co/600x400/png&#39;);">
+        <div class="content-area" style="justify-content: center; align-items: center; text-align: center;">
+            <h2 style="font-size: 64px; max-width: 800px; line-height: 1.2; font-weight: 500;">
+                First impressions happen <span style="color: var(--text-main); font-weight: 700;">online.</span>
+            </h2>
+        </div>
+    </div>
+
+    <!-- Slide 3: Before vs After transformation -->
+    <div class="slide-container grid-bg" id="slide3">
+        <div class="content-area">
+            <h2 class="slide-title">The Power of <span>Transformation</span></h2>
+            <div class="two-column" style="gap: 20px;">
+                <div style="display: flex; flex-direction: column; gap: 20px; height: 100%;">
+                    <div style="background: var(--bg-charcoal); padding: 20px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-grow: 1;">
+                        <p style="font-size: 24px; color: var(--text-muted); font-weight: 500;">Generic Layout</p>
+                    </div>
+                </div>
+                <div style="height: 100%;">
+                    <div class="image-wrapper">
+                        <img alt="Premium Brand Identity Transformation" src="https://placehold.co/600x400/png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: About InboxTales -->
+    <div class="slide-container grid-bg" id="slide4">
+        <div class="content-area">
+            <div class="two-column">
+                <div>
+                    <h2 class="slide-title" style="margin-bottom: 40px;">We are <span>InboxTales</span></h2>
+                    <p style="font-size: 28px; line-height: 1.5; color: var(--text-main); font-weight: 400;">
+                        A premium digital agency dedicated to crafting polished, high-end identities for modern businesses. We bridge the gap between aesthetic design and strategic growth.
+                    </p>
+                </div>
+                <div style="height: 450px;">
+                    <div class="image-wrapper">
+                        <img alt="Professional Agency Team" src="https://placehold.co/600x400/png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Services -->
+    <div class="slide-container grid-bg" id="slide5">
+        <div class="content-area" style="justify-content: center;">
+            <h2 class="slide-title" style="text-align: center; margin-bottom: 20px;">Our <span>Expertise</span></h2>
+            <div class="tiled-services">
+                <div class="service-tile">
+                    <div class="icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Website Development</h3>
+                    <p>Sleek, responsive digital platforms.</p>
+                </div>
+                <div class="service-tile">
+                    <div class="icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3>Branding</h3>
+                    <p>Distinctive and memorable identities.</p>
+                </div>
+                <div class="service-tile">
+                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Digital Marketing</h3>
+                    <p>Strategic growth and online visibility.</p>
+                </div>
+                <div class="service-tile">
+                    <div class="icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Social Media Design</h3>
+                    <p>Curated, aesthetic social feeds.</p>
+                </div>
+                <div class="service-tile">
+                    <div class="icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <p>Intuitive and engaging user flows.</p>
+                </div>
+                <div class="service-tile" style="border: 2px dashed rgba(0, 0, 0, 0.15); display: flex; align-items: center; justify-content: center; background: transparent;">
+                     <h3 style="color: var(--text-main); margin: 0; font-weight: 700;">Premium Quality</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Website showcase -->
+    <div class="slide-container grid-bg" id="slide6">
+        <div class="content-area">
+            <h2 class="slide-title">Digital <span>Experiences</span></h2>
+            <div class="showcase-grid">
+                <div class="image-wrapper">
+                    <img alt="Sleek Laptop Mockup" src="https://placehold.co/600x400/png">
+                </div>
+                <div class="image-wrapper">
+                    <img alt="Sleek Mobile Mockup" src="https://placehold.co/600x400/png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Branding & Creative Work -->
+    <div class="slide-container grid-bg" id="slide7">
+        <div class="content-area">
+            <div class="two-column">
+                <div style="height: 500px;">
+                    <div class="image-wrapper">
+                        <img alt="Premium Brand Identity Mockup" src="https://placehold.co/600x400/png">
+                    </div>
+                </div>
+                <div style="padding-left: 40px;">
+                    <h2 class="slide-title">Visual <span>Identity</span></h2>
+                    <p style="font-size: 24px; margin-bottom: 30px; font-weight: 400; color: var(--text-main);">Elevating brands through meticulous design, from corporate collateral to compelling social media narratives.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Why Businesses Need Strong Digital Presence -->
+    <div class="slide-container full-bg-image" id="slide8" style="background-image: url(&#39;https://placehold.co/600x400/png&#39;);">
+        <div class="content-area" style="justify-content: center; z-index: 2;">
+            <div style="max-width: 600px;">
+                <h2 style="font-size: 72px; font-weight: 700; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px !important;">Visibility<br>is <span>Viability.</span></h2>
+                <p style="font-size: 24px; color: var(--text-muted); font-weight: 500;">In the modern market, a premium digital presence isn&#39;t an option—it&#39;s the foundation of business growth.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Why Choose InboxTales -->
+    <div class="slide-container grid-bg" id="slide9">
+        <div class="content-area">
+            <div class="two-column">
+                <div>
+                    <h2 class="slide-title">The InboxTales <span>Advantage</span></h2>
+                </div>
+                <div>
+                    <ul class="minimal-list">
+                        <li>Modern Design</li>
+                        <li>Fast Delivery</li>
+                        <li>Premium Branding</li>
+                        <li>Business Focused</li>
+                        <li>Creative Strategy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Starter Package -->
+    <div class="slide-container" id="slide10" style="padding: 0;">
+        <div class="package-slide">
+            <div class="package-content alt-bg">
+                <h2 class="slide-title" style="font-size: 32px; margin-bottom: 15px; letter-spacing: -1px;">Package 1 / <span>Starter</span></h2>
+                <div class="package-price">₹8,000</div>
+                <p class="package-desc">Simple. Clean. Professional.<br><span style="font-size: 18px; color: var(--text-muted); font-weight: 500;">Best for businesses that need a professional online presence quickly.</span></p>
+                
+                <h4 class="package-subtitle">Includes:</h4>
+                <ul class="package-features single-col">
+                    <li><i class="fa-solid fa-check"></i> Professional Website (3 Core Pages)</li>
+                    <li><i class="fa-solid fa-check"></i> Mobile Responsive Design</li>
+                    <li><i class="fa-solid fa-check"></i> WhatsApp &amp; Contact Form Integration</li>
+                    <li><i class="fa-solid fa-check"></i> Basic SEO &amp; Fast Loading Pages</li>
+                    <li><i class="fa-solid fa-check"></i> Basic UI Design</li>
+                </ul>
+                <p class="package-note">* Extra Pages: ₹1,000 per additional page</p>
+            </div>
+            <div class="package-image-side">
+                <img alt="Minimal Clean Workspace" src="https://png.pngtree.com/thumb_back/fw800/background/20260201/pngtree-minimalist-desk-setup-in-dark-room-with-soft-lighting-featuring-sleek-image_20861726.webp">
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: Growth Package -->
+    <div class="slide-container" id="slide11" style="padding: 0;">
+        <div class="package-slide">
+            <div class="package-image-side">
+                <img alt="Premium UI UX Design Mockup" src="https://figmaelements.com/wp-content/uploads/2025/01/dark-mode-technology-startup-figma-website-template.png">
+            </div>
+            <div class="package-content">
+                <h2 class="slide-title" style="font-size: 32px; margin-bottom: 15px; letter-spacing: -1px;">Package 2 / <span>Growth</span></h2>
+                <div class="package-price">₹12,000</div>
+                <p class="package-desc">“Your business now looks premium.”<br><span style="font-size: 18px; color: var(--text-muted); font-weight: 500;">Designed to make your business look trustworthy online.</span></p>
+                
+                <h4 class="package-subtitle">Everything in Starter, Plus:</h4>
+                <ul class="package-features">
+                    <li><i class="fa-solid fa-check"></i> Premium Modern UI/UX</li>
+                    <li><i class="fa-solid fa-check"></i> Advanced Website Styling</li>
+                    <li><i class="fa-solid fa-check"></i> Interactive Sections &amp; Animations</li>
+                    <li><i class="fa-solid fa-check"></i> Gallery/Menu Showcase</li>
+                    <li><i class="fa-solid fa-check"></i> Instagram &amp; Maps Integration</li>
+                    <li><i class="fa-solid fa-check"></i> Conversion-Focused Layout</li>
+                    <li><i class="fa-solid fa-check"></i> Speed Optimization</li>
+                    <li><i class="fa-solid fa-check"></i> Premium Visual Experience</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: Brand Premium Package -->
+    <div class="slide-container" id="slide12" style="padding: 0;">
+        <div class="package-slide">
+            <div class="package-content alt-bg">
+                <h2 class="slide-title" style="font-size: 32px; margin-bottom: 15px; letter-spacing: -1px;">Package 3 / <span>Brand Premium</span></h2>
+                <div class="package-price" style="font-size: 48px; margin-top: 10px;">₹20,000 – ₹25,000</div>
+                <p class="package-desc" style="font-size: 18px; margin-bottom: 25px;">Complete premium digital branding solution.<br><span style="color: var(--text-muted); font-size: 16px; font-weight: 500;">Securing brand identity, market perception, and a complete digital presence.</span></p>
+                
+                <h4 class="package-subtitle">Everything in Growth, Plus:</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div>
+                        <ul class="package-features single-col">
+                            <li><i class="fa-solid fa-check"></i> Premium Logo Design</li>
+                            <li><i class="fa-solid fa-check"></i> Brand Color &amp; Typography</li>
+                            <li><i class="fa-solid fa-check"></i> Brand Styling Guide</li>
+                            <li><i class="fa-solid fa-check"></i> Social Media Branding</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="package-features single-col">
+                            <li><i class="fa-solid fa-check"></i> Priority Support</li>
+                            <li><i class="fa-solid fa-check"></i> Advanced SEO Optimization</li>
+                            <li><i class="fa-solid fa-check"></i> 1 Year Free Maintenance</li>
+                            <li><i class="fa-solid fa-check"></i> Technical Assistance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="package-image-side">
+                <img alt="Luxury Corporate Brand Identity Mockup" src="https://images.pixeden.com/images/stationery-branding-mock-up-vol-3-2_full_preview.jpg">
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 13: Workflow Process -->
+    <div class="slide-container grid-bg" id="slide13">
+        <div class="content-area" style="justify-content: center;">
+            <h2 class="slide-title" style="text-align: center; margin-bottom: 60px;">Our <span>Process</span></h2>
+            <div class="workflow-container">
+                <div class="workflow-line"></div>
+                <div class="workflow-step">
+                    <div class="step-number">01</div>
+                    <h3>Discovery</h3>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">02</div>
+                    <h3>Strategy</h3>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">03</div>
+                    <h3>Design</h3>
+                </div>
+                <div class="workflow-step">
+                    <div class="step-number">04</div>
+                    <h3>Launch</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 14: Results & Impact -->
+    <div class="slide-container grid-bg" id="slide14">
+        <div class="content-area">
+            <h2 class="slide-title">Measurable <span>Impact</span></h2>
+            <div class="two-column" style="margin-top: 20px;">
+                 <div style="display: flex; flex-direction: column; justify-content: center; gap: 40px;">
+                     <div style="border-left: 3px solid var(--text-main); padding-left: 30px;">
+                         <h4 style="font-size: 48px; margin-bottom: 10px; font-weight: 700;">Growth</h4>
+                         <p>Elevated brand perception leading to increased market share.</p>
+                     </div>
+                     <div style="border-left: 3px solid var(--bg-charcoal); padding-left: 30px;">
+                         <h4 style="font-size: 48px; margin-bottom: 10px; color: var(--text-muted); font-weight: 700;">Conversion</h4>
+                         <p>Optimized digital experiences that turn visitors into clients.</p>
+                     </div>
+                 </div>
+                 <div style="height: 400px; background: var(--bg-charcoal); border-radius: var(--radius-md); position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 40px; gap: 20px;">
+                     <!-- Modern Minimalist Bar Chart Representation -->
+                     <div style="width: 25%; background: rgba(0,0,0,0.05); height: 40%; border-radius: 4px;"></div>
+                     <div style="width: 25%; background: rgba(0,0,0,0.15); height: 65%; border-radius: 4px;"></div>
+                     <div style="width: 25%; background: var(--text-main); height: 95%; border-radius: 4px;"></div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 15: Final Closing Slide -->
+    <div class="slide-container full-bg-image" id="slide15" style="background-image: url(&#39;https://placehold.co/600x400/png&#39;);">
+        <div class="contact-layout">
+            <h2>Let&#39;s Build Something<br>Powerful Together</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>www.inboxtales.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>weinboxtales@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="slide-container slide-attributions" id="slide-attributions-1"><h2 class="slide-title">Image Sources</h2><div class="content-area"><ul class="attribution-list"><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" alt="Thumbnail for www.paintingsonline.com.au" src="https://placehold.co/600x400/png"></div><div class="attribution__details"><p class="attribution__raw-url">https://cdn.shopify.com/s/files/1/2126/2505/files/ChatGPT_Image_Dec_29_2025_03_19_36_PM.png?v=1767003602</p><p class="attribution__title">Source: <a href="https://www.paintingsonline.com.au/blogs/blogs/color-theory-and-compositional-balance-in-modern-abstract-art-paintings" target="_blank" class="attribution__link">www.paintingsonline.com.au</a></p></div></li><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" alt="Thumbnail for www.lemon8-app.com" src="https://placehold.co/600x400/png"></div><div class="attribution__details"><p class="attribution__raw-url">https://www.lemon8-app.com/seo/image?item_id=7598744825168511489&amp;index=1&amp;sign=9dba3e2bcf935ae885e9185808988f4d</p><p class="attribution__title">Source: <a href="https://www.lemon8-app.com/@zhenyic/7598744825168511489?region=sg" target="_blank" class="attribution__link">www.lemon8-app.com</a></p></div></li><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" alt="Thumbnail for www.freepik.com" src="https://placehold.co/600x400/png"></div><div class="attribution__details"><p class="attribution__raw-url">https://img.freepik.com/premium-psd/laptop-mockup-with-website-display-black-background_176048-1231.jpg</p><p class="attribution__title">Source: <a href="https://www.freepik.com/premium-psd/laptop-mockup-with-website-display-black-background_416713457.htm" target="_blank" class="attribution__link">www.freepik.com</a></p></div></li><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" alt="Thumbnail for mockey.ai" src="https://placehold.co/600x400/png"></div><div class="attribution__details"><p class="attribution__raw-url">https://assets.mockey.ai/mockups/mobiledisplay/1774594640295-phone-421-preview.png</p><p class="attribution__title">Source: <a href="https://mockey.ai/mockups/vertical-phone" target="_blank" class="attribution__link">mockey.ai</a></p></div></li><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" alt="Thumbnail for mockuptree.com" src="https://placehold.co/600x400/png"></div><div class="attribution__details"><p class="attribution__raw-url">https://mockuptree.com/wp-content/uploads/edd/2019/02/free-business_stationery_mockup.jpg</p><p class="attribution__title">Source: <a href="https://mockuptree.com/free/gold-black-business-card-mockup/" target="_blank" class="attribution__link">mockuptree.com</a></p></div></li><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" alt="Thumbnail for www.magnific.com" src="https://placehold.co/600x400/png"></div><div class="attribution__details"><p class="attribution__raw-url">https://img.magnific.com/free-photo/future-visions-business-technology-concept_23-2151893425.jpg?semt=ais_hybrid&amp;w=740&amp;q=80</p><p class="attribution__title">Source: <a href="https://www.magnific.com/free-photos-vectors/dark-office-background" target="_blank" class="attribution__link">www.magnific.com</a></p></div></li></ul></div></div><div class="slide-container slide-attributions" id="slide-attributions-2"><h2 class="slide-title">Image Sources</h2><div class="content-area"><ul class="attribution-list"><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" alt="Thumbnail for www.lemon8-app.com" src="https://placehold.co/600x400/png"></div><div class="attribution__details"><p class="attribution__raw-url">https://www.lemon8-app.com/seo/image?item_id=7437122182599688760&amp;index=1&amp;sign=edb7c4554cac3ca320bbf4a961300c26</p><p class="attribution__title">Source: <a href="https://www.lemon8-app.com/@iamjessamy/7437122182599688760?region=us" target="_blank" class="attribution__link">www.lemon8-app.com</a></p></div></li><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" alt="Thumbnail for unsplash.com" src="https://placehold.co/600x400/png"></div><div class="attribution__details"><p class="attribution__raw-url">https://plus.unsplash.com/premium_photo-1682309543429-6aaa6d792dae?fm=jpg&amp;q=60&amp;w=3000&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D</p><p class="attribution__title">Source: <a href="https://unsplash.com/photos/golden-arrow-rising-with-growing-bar-graph-chart-white-background-business-growth-trend-3d-render-illustration-2t0RSGjBJC0" target="_blank" class="attribution__link">unsplash.com</a></p></div></li><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" alt="Thumbnail for www.vecteezy.com" src="https://placehold.co/600x400/png"></div><div class="attribution__details"><p class="attribution__raw-url">https://static.vecteezy.com/system/resources/thumbnails/055/135/170/small/close-up-handshake-between-two-business-professionals-in-formal-attire-symbolizing-partnership-agreement-and-collaboration-free-png.png</p><p class="attribution__title">Source: <a href="https://www.vecteezy.com/png/55135170-close-up-handshake-between-two-business-professionals-in-formal-attire-symbolizing-partnership-agreement-and-collaboration" target="_blank" class="attribution__link">www.vecteezy.com</a></p></div></li></ul></div></div><div class="slide-container slide-attributions" id="slide-attributions-1"><h2 class="slide-title">Image Sources</h2><div class="content-area"><ul class="attribution-list"><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQcv0C1nLgYYpeZjocpAG0GlNG-fV4MQpVfg2BB8lzAFStBvqpgt-eif_-OF-Wc" alt="Thumbnail for pngtree.com"></div><div class="attribution__details"><p class="attribution__raw-url">https://png.pngtree.com/thumb_back/fw800/background/20260201/pngtree-minimalist-desk-setup-in-dark-room-with-soft-lighting-featuring-sleek-image_20861726.webp</p><p class="attribution__title">Source: <a href="https://pngtree.com/freebackground/minimalist-desk-setup-in-dark-room-with-soft-lighting-featuring-sleek-black-laptop-plant-and-notebook-conveying-modern-focused-productive-workspace_20061353.html" target="_blank" class="attribution__link">pngtree.com</a></p></div></li><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT9Mo9Lbt5n_uaYZuT8oLXoXxk0gesL56l534PTi_8gGLU8f6NTpGMb4jZEtD7u" alt="Thumbnail for figmaelements.com"></div><div class="attribution__details"><p class="attribution__raw-url">https://figmaelements.com/wp-content/uploads/2025/01/dark-mode-technology-startup-figma-website-template.png</p><p class="attribution__title">Source: <a href="https://figmaelements.com/dashbrd-x-dashboard-dark-mode-figma-template/" target="_blank" class="attribution__link">figmaelements.com</a></p></div></li><li class="attribution-list__item"><div class="attribution__thumbnail"><img class="attribution__thumbnail__image" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS43jDhf5Lt7Dbl-Ji6O_Z6Z4cJRpk3JBfKFeVxYS5qheVx0FNpmwmz2a9QwK8c" alt="Thumbnail for www.pixeden.com"></div><div class="attribution__details"><p class="attribution__raw-url">https://images.pixeden.com/images/stationery-branding-mock-up-vol-3-2_full_preview.jpg</p><p class="attribution__title">Source: <a href="https://www.pixeden.com/psd-mock-up-templates/stationery-branding-mock-up-vol-3-2" target="_blank" class="attribution__link">www.pixeden.com</a></p></div></li></ul></div></div></body></html>

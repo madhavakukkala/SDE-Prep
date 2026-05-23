@@ -192,7 +192,7 @@ print(frequency)
 
 
 ## Print first element and last element.
-
+'''
 lst=[11,12,3,4,32,5,63,0,70,10]
 largest=lst[0]
 count=0
@@ -215,6 +215,7 @@ print(second_largest)
 print(largest)
     
 '''
+'''
 FOR every number:
 
     if bigger than largest:
@@ -229,7 +230,7 @@ FOR every number:
 
 
 ##Check whether element exists in list.
-
+'''
 lst = [1, 2, 3, 4, 5]
 target=int(input("Element to check:"))
 
@@ -246,10 +247,47 @@ else:
 #     print("Element does not exist")
 
 
-##Count frequency of a given element.
+'''
 
-lst=[1,2,2,3,2]
-new_lst=[]
+'''
 
-for items in lst:
-    lst[items]
+Question: Count Frequency of an Element in a List
+
+Write a program that takes a list of integers and a target element as input, then prints how many times the target element appears in the list.
+
+Input Format
+First line: space-separated integers representing the list
+Second line: integer x (the element to count)
+Output Format
+Print the frequency of x in the list
+Example
+
+Input
+
+1 2 3 2 4 2 5
+2
+
+Output
+
+3
+Constraints
+Length of list ≥ 1
+Elements can be positive, negative, or zero
+Expected Difficulty
+
+Basic list traversal and counting.
+
+Follow-up
+
+Solve it:
+
+Using a loop
+Using the built-in count() method
+
+
+'''
+
+nums = list(map(int, input().split()))
+x = int(input())
+
+
