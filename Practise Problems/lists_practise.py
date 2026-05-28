@@ -287,7 +287,48 @@ Using the built-in count() method
 
 '''
 
-nums = list(map(int, input().split()))
-x = int(input())
+# nums = list(map(int, input().split()))
+# x = int(input())
+
+# count=0
+
+# for i in nums:
+#     if i==x:
+#         count+=1
+
+# print(count)
+
+
+
+
+# Find duplicate elements.
+'''
+lst=[1,2,3,4,6,4,4,4,3,2,2,1,6,7,89,0]
+
+seen=[]
+duplicates=[]
+
+
+for i in lst:
+    if i in seen:
+        duplicates.append(i)
+    else:
+        seen.append(i)
+
+
+print(seen)
+print(set(duplicates))
+'''
+def gen_fun(n,m):
+
+    lst=[]
+    for i in range(n):
+        lst.append("*" * m)
+
+    return lst
+
+
+print(gen_fun(4,5))
+
 
 
