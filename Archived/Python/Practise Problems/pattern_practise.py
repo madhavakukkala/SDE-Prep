@@ -119,13 +119,11 @@ def pattern13(n):
 
 
 def pattern14(n):
-    for i in range(n+1):
-        for char in range(65,65+i):
-            print(chr(char), end="")
-        print()
+        for i in range(n+1):
+            for char in range(65,65+i):
+                print(chr(char), end="")
+            print()
     
-
-
 
 
 
