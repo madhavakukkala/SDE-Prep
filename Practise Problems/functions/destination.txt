@@ -1,0 +1,5 @@
+Hello World , of the 2026!
+This is a new line!Hello babes !
+Append operation taking placeFirst line 
+Second line 
+Third line 

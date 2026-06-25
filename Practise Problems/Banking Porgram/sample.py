@@ -1,0 +1,3 @@
+import banking
+
+banking.main()

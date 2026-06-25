@@ -652,8 +652,10 @@ class allproblems {
         int digits = sc.nextInt();
         System.out.println("Enter sum: ");
         long sum = sc.nextInt();
+        long start = (long) Math.pow(10, digits - 1); // 10**digits-1
+        long end = (long) Math.pow(10, digits); // 10**digits
 
-        for (long i = (long) Math.pow(10, digits - 1); i < (long) ((Math.pow(10, digits))); i++) {
+        for (long i = start; i < end ; i++) {
             long temp = i;
             long sums = 0;
             while (temp > 0) {
@@ -668,6 +670,94 @@ class allproblems {
 
         }
 
+    }
+
+    //Happy number 
+    public void happynumber()
+    {
+        int n = 2;
+        int temp1 = n;
+        int sum = 0;
+        int digit  = 0;
+        boolean ishappy = false;
+        while (temp1 > 0)
+        {   
+            while (temp1>0)
+            {
+                digit = temp1%10;
+                sum += (int) Math.pow(digit,2);
+                temp1 /= 10;
+                
+            }
+            
+            temp1 = sum;
+            
+            // System.out.println(sum);
+            
+            if (sum == 1){
+                ishappy = true;
+                break;
+            }
+            else if (sum== 4){
+                ishappy = false;
+                break;
+            }
+            sum = 0;
+        }
+
+        if (ishappy)
+            System.out.println(ishappy);
+        else
+            System.out.println(ishappy);
+
+    }
+    
+
+    public void decimaltobinary()
+    {
+        System.out.println("Enter decimal number : ");
+        int n = sc.nextInt();
+        int remainder = 0;
+        int binary = 0;
+        int temp = n;
+        int place = 1;
+        int quotient = temp/2;
+
+        while (quotient > 0)
+            {
+                quotient = temp/2;
+                remainder = temp%2;
+                
+                binary = binary + remainder*place;
+                temp = quotient;
+            place *= 10;
+        }
+        
+        System.out.println(binary);
+    }
+    
+    
+    public void binarytodecimal()
+    {
+        System.out.println("Enter decimal number : ");
+        int n = sc.nextInt();
+        int digit_count = 0;
+        int digit = 0;
+        int sum = 0;
+        int temp = n;
+        int binary = 0;
+
+        // to find the nnumber of digits
+        while(temp>0)
+        {
+            digit_count++;
+            digit = temp%10;
+            binary = digit * (int) Math.pow(digit,digit_count);
+            sum += binary;
+            temp/=10;
+        }
+        System.out.println(sum);
+        
     }
 
 }
@@ -710,7 +800,11 @@ public class problems {
         // obj.perfectsquares_from1toN();
         // obj.Armstrong_numbers_from_1_to_N();
         // obj.strongnumbersfrom1toN();
-        obj.digit_sum_X();
+        // obj.digit_sum_X();
+        // obj.happynumber();
+        // obj.decimaltobinary();
+        obj.binarytodecimal();
+        
 
         obj.sc.close();
     }
