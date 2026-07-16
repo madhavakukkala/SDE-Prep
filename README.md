@@ -7,6 +7,7 @@ Preparing for SDE roles and documenting the journey along the way. This GitHub i
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0189-rotate-array](https://github.com/madhavakukkala/SDE-Prep/tree/main/0189-rotate-array/) | Medium |
+| [0283-move-zeroes](https://github.com/madhavakukkala/SDE-Prep/tree/main/0283-move-zeroes/) | Easy |
 ## Math
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -15,4 +16,5 @@ Preparing for SDE roles and documenting the journey along the way. This GitHub i
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0189-rotate-array](https://github.com/madhavakukkala/SDE-Prep/tree/main/0189-rotate-array/) | Medium |
+| [0283-move-zeroes](https://github.com/madhavakukkala/SDE-Prep/tree/main/0283-move-zeroes/) | Easy |
 <!---LeetCode Topics End-->
