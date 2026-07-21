@@ -8,6 +8,7 @@ Preparing for SDE roles and documenting the journey along the way. This GitHub i
 | ------- | ------- |
 | [0189-rotate-array](https://github.com/madhavakukkala/SDE-Prep/tree/main/0189-rotate-array/) | Medium |
 | [0283-move-zeroes](https://github.com/madhavakukkala/SDE-Prep/tree/main/0283-move-zeroes/) | Easy |
+| [0485-max-consecutive-ones](https://github.com/madhavakukkala/SDE-Prep/tree/main/0485-max-consecutive-ones/) | Easy |
 ## Math
 | Problem Name | Difficulty |
 | ------- | ------- |
