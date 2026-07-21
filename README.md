@@ -7,15 +7,33 @@ Preparing for SDE roles and documenting the journey along the way. This GitHub i
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0189-rotate-array](https://github.com/madhavakukkala/SDE-Prep/tree/main/0189-rotate-array/) | Medium |
+| [0268-missing-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0268-missing-number/) | Easy |
 | [0283-move-zeroes](https://github.com/madhavakukkala/SDE-Prep/tree/main/0283-move-zeroes/) | Easy |
 | [0485-max-consecutive-ones](https://github.com/madhavakukkala/SDE-Prep/tree/main/0485-max-consecutive-ones/) | Easy |
 ## Math
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0189-rotate-array](https://github.com/madhavakukkala/SDE-Prep/tree/main/0189-rotate-array/) | Medium |
+| [0268-missing-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0268-missing-number/) | Easy |
 ## Two Pointers
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0189-rotate-array](https://github.com/madhavakukkala/SDE-Prep/tree/main/0189-rotate-array/) | Medium |
 | [0283-move-zeroes](https://github.com/madhavakukkala/SDE-Prep/tree/main/0283-move-zeroes/) | Easy |
+## Hash Table
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0268-missing-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0268-missing-number/) | Easy |
+## Binary Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0268-missing-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0268-missing-number/) | Easy |
+## Bit Manipulation
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0268-missing-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0268-missing-number/) | Easy |
+## Sorting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0268-missing-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0268-missing-number/) | Easy |
 <!---LeetCode Topics End-->
