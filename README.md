@@ -6,6 +6,7 @@ Preparing for SDE roles and documenting the journey along the way. This GitHub i
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0136-single-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0136-single-number/) | Easy |
 | [0189-rotate-array](https://github.com/madhavakukkala/SDE-Prep/tree/main/0189-rotate-array/) | Medium |
 | [0268-missing-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0268-missing-number/) | Easy |
 | [0283-move-zeroes](https://github.com/madhavakukkala/SDE-Prep/tree/main/0283-move-zeroes/) | Easy |
@@ -31,6 +32,7 @@ Preparing for SDE roles and documenting the journey along the way. This GitHub i
 ## Bit Manipulation
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0136-single-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0136-single-number/) | Easy |
 | [0268-missing-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0268-missing-number/) | Easy |
 ## Sorting
 | Problem Name | Difficulty |
