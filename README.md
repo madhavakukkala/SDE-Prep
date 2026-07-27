@@ -6,6 +6,7 @@ Preparing for SDE roles and documenting the journey along the way. This GitHub i
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0001-two-sum](https://github.com/madhavakukkala/SDE-Prep/tree/main/0001-two-sum/) | Easy |
 | [0136-single-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0136-single-number/) | Easy |
 | [0189-rotate-array](https://github.com/madhavakukkala/SDE-Prep/tree/main/0189-rotate-array/) | Medium |
 | [0268-missing-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0268-missing-number/) | Easy |
@@ -24,6 +25,7 @@ Preparing for SDE roles and documenting the journey along the way. This GitHub i
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0001-two-sum](https://github.com/madhavakukkala/SDE-Prep/tree/main/0001-two-sum/) | Easy |
 | [0268-missing-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0268-missing-number/) | Easy |
 ## Binary Search
 | Problem Name | Difficulty |
