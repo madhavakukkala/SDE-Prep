@@ -10,5 +10,3 @@ class Solution:
                 arr.append(i)
             mpp[nums[i]] = i
         return arr
-        
-        
