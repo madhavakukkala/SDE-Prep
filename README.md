@@ -28,6 +28,7 @@ Preparing for SDE roles and documenting the journey along the way. This GitHub i
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0001-two-sum](https://github.com/madhavakukkala/SDE-Prep/tree/main/0001-two-sum/) | Easy |
+| [0205-isomorphic-strings](https://github.com/madhavakukkala/SDE-Prep/tree/main/0205-isomorphic-strings/) | Easy |
 | [0268-missing-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0268-missing-number/) | Easy |
 ## Binary Search
 | Problem Name | Difficulty |
@@ -43,4 +44,8 @@ Preparing for SDE roles and documenting the journey along the way. This GitHub i
 | ------- | ------- |
 | [0075-sort-colors](https://github.com/madhavakukkala/SDE-Prep/tree/main/0075-sort-colors/) | Medium |
 | [0268-missing-number](https://github.com/madhavakukkala/SDE-Prep/tree/main/0268-missing-number/) | Easy |
+## String
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0205-isomorphic-strings](https://github.com/madhavakukkala/SDE-Prep/tree/main/0205-isomorphic-strings/) | Easy |
 <!---LeetCode Topics End-->
